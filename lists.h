@@ -3,17 +3,18 @@
 
 /**
  * struct list_s - singly linked list
- * @str: String (dynamically allocated)
- * @len: Length of the string
- * @next: Pointer to the next node
+ * @str: string - (malloc'ed string)
+ * @len: length of the string
+ * @next: points to the next node
  *
- * Description: Definition of a singly linked list node structure
+ * Description: singly linked list node structure
+ * for Holberton project
  */
 typedef struct list_s
 {
-    char *str;
-    unsigned int len;
-    struct list_s *next;
+	char *str;
+	unsigned int len;
+	struct list_s *next;
 } list_t;
 
 size_t print_list(const list_t *h);
