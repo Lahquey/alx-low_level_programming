@@ -1,10 +1,10 @@
 #include "lists.h"
 
 /**
- * liberate_listint2 - bids farewell to a linked list
- * @head: pointer to the listint_t list that shall be released
+ * free_listint2 - frees a linked list
+ * @head: pointer to the listint_t list to be freed
  */
-void liberate_listint2(listint_t **head)
+void free_listint2(listint_t **head)
 {
 	listint_t *temp;
 
@@ -20,4 +20,3 @@ void liberate_listint2(listint_t **head)
 
 	*head = NULL;
 }
-
