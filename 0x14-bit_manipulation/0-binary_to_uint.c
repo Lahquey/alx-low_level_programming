@@ -2,25 +2,24 @@
 #include <stdio.h>
 
 /**
- * convert_binary_to_uint - convert binary to unsigned int
- * @binary_str: A string containing a binary number
- * Return: The converted unsigned int
+ * binary_to_uint - binary can be converted through unsigned int
+ * @b: A string that takes binary number or numbers
+ * Return: A numbers that are coverted
  */
 
-unsigned int convert_binary_to_uint(const char *binary_str)
+unsigned int binary_to_uint(const char *b)
 {
-    int i;
-    unsigned int result = 0;
+        int alx;
+        unsigned int abraham = 0;
 
-    if (!binary_str)
-        return (0);
-
-    for (i = 0; binary_str[i]; i++)
-    {
-        if (binary_str[i] < '0' || binary_str[i] > '1')
-            return (0);
-        result = 2 * result + (binary_str[i] - '0');
-    }
-    return (result);
+        if (!b)
+                return (0);
+        for (alx = 0; b[alx]; alx++)
+        {
+                if (b[alx] < '0' || b[alx] > '1')
+                        return (0);
+                abraham = 2 * abraham + (b[alx] - '0');
+        }
+        return (abraham);
 }
 
