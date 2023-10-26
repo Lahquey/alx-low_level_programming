@@ -1,14 +1,14 @@
-#ifndef CUSTOM_MAIN_H
-#define CUSTOM_MAIN_H
+#ifndef _MAIN_H_
+#define _MAIN_H_
 
-unsigned int custom_binary_to_uint(const char *binary_str);
-void custom_print_binary(unsigned long int num);
-int custom_get_bit(unsigned long int num, unsigned int index);
-int custom_set_bit(unsigned long int *num, unsigned int index);
-int custom_clear_bit(unsigned long int *num, unsigned int index);
-unsigned int custom_flip_bits(unsigned long int num1, unsigned long int num2);
-int custom_atoi(const char *str);
-int custom_putchar(char ch);
-int custom_get_endianness(void);
+int _putchar(char c);
+unsigned int binary_to_uint(const char *b);
+void print_binary(unsigned long int n);
+int get_bit(unsigned long int n, unsigned int index);
+int set_bit(unsigned long int *n, unsigned int index);
+int clear_bit(unsigned long int *n, unsigned int index);
+unsigned int flip_bits(unsigned long int n, unsigned long int m);
+int get_endianness(void);
 
-#endif  /* CUSTOM_MAIN_H */
+#endif
+
