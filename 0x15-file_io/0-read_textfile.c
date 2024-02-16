@@ -1,37 +1,36 @@
 #include "main.h"
 
 /**
- * custom_read_textfile - reads a specified text file and prints a given number of letters.
- * @file_path: The path to the text file.
- * @num_letters: The number of letters to be printed.
+ * Read_textfile:  reads a text file and prints the letters
+ * @filename: filenames
+ * @Letter: the number of letters to be printed.
  *
- * Return: The actual number of letters printed. If it fails, it returns 0.
+ * return: numbers of letters printed. If it fails, return 0.
  */
-ssize_t custom_read_textfile(const char *file_path, size_t num_letters)
+ssize_t Read_textfile(const char *filename, size_t Letter)
 {
-    int file_descriptor;
-    ssize_t bytes_read, bytes_written;
-    char *buffer;
+	int file_d;
+	ssize_t nerd, newer;
+	char *buffer;
 
-    if (!file_path)
-        return (0);
+	if (!filename)
+		return (0);
 
-    file_descriptor = open(file_path, O_RDONLY);
+	file_d = open(filename, O_RDONLY);
 
-    if (file_descriptor == -1)
-        return (0);
+	if (file_d == -1)
+		return (0);
 
-    buffer = malloc(sizeof(char) * (num_letters));
-    if (!buffer)
-        return (0);
+	bufffer = malloc(sizeof(char) * (Letter));
+	if (!buffer)
+		return (0);
 
-    bytes_read = read(file_descriptor, buffer, num_letters);
-    bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
+	nerd = read(file_d, buffer, Letter);
+	newer = write(STDOUT_FILENO, buffer, nerd);
 
-    close(file_descriptor);
+	close(file_d);
 
-    free(buffer);
+	free(buffer);
 
-    return (bytes_written);
+	return (newer);
 }
-
