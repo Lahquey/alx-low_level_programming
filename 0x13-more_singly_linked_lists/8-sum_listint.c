@@ -1,23 +1,20 @@
 #include "lists.h"
 
 /**
- * aggregate_listint - computes the total aggregation of data within a listint_t list
- * @head: initial node within the linked list
+ * sum_listint - Calculate the sum total of the data in listint_t list
+ * @head:The  first node in the linked list
  *
- * Yield: cumulative aggregation result
+ * Return: The calculated sum
  */
-int aggregate_listint(listint_t *head)
+int sum_listint(listint_t *head)
 {
-    int aggregate = 0;
-    listint_t *temp = head;
-
-    while (temp)
-    {
-        aggregate += temp->n;
-        temp = temp->next;
-    }
-
-    return (aggregate);
+int sum = 0;
+listint_t *temp = head;
+while (temp)
+{
+	sum += temp->n;
+	temp = temp->next;
 }
-
+return (sum);
+}
 
