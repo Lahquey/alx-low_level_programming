@@ -2,17 +2,17 @@
 #include <stdio.h>
 
 /**
- * Error_file - checks if the  files can be opened.
- * @file_from: file_from.
- * @file_to: file_to.
- * @argv: arguments vector.
- * Return: return 0.
+ * error_file - checks if the  files can be opened.
+ * @file_from: file_from
+ * @file_to: file_to
+ * @argv: arguments vector
+ * Return: returns a 0
  */
-void Error_file(int file_from, int file_to, char *argv[])
+void error_file(int file_from, int file_to, char *argv[])
 {
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from the file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Cannot read from the file %s\n", argv[1]);
 		exit(98);
 	}
 	if (file_to == -1)
@@ -23,10 +23,10 @@ void Error_file(int file_from, int file_to, char *argv[])
 }
 
 /**
- * main - check code for Holberton School students.
- * @argc: the number of arguments.
- * @argv: the arguments vector.
- * Return: returns 0.
+ * main - checks the code for Holberton School students.
+ * @argc: the number of arguments
+ * @argv: the arguments vector
+ * Return: returns a 0
  */
 int main(int argc, char *argv[])
 {
@@ -42,17 +42,17 @@ int main(int argc, char *argv[])
 
 	file_from = open(argv[1], O_RDONLY);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
-	Error_file(file_from, file_to, argv);
+	error_file(file_from, file_to, argv);
 
 	n_chars = 1024;
 	while (n_chars == 1024)
 	{
 		n_chars = read(file_from, buffer, 1024);
 		if (n_chars == -1)
-			Error_file(-1, 0, argv);
+			error_file(-1, 0, argv);
 		nwr = write(file_to, buffer, n_chars);
 		if (nwr == -1)
-			Error_file(0, -1, argv);
+			error_file(0, -1, argv);
 	}
 
 	err_close = close(file_from);
