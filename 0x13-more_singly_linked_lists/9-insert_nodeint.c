@@ -2,6 +2,7 @@
 
 /**
  * insert_nodeint_at_index - Incorporates a fresh node into a linked list,
+ * listint_t: fgdfhf jhjjfjf jfjjfjf
  * positioned at a specified index.
  * @head: Reference to the initial node in the list.
  * @idx: Index where the new node is to be introduced.
